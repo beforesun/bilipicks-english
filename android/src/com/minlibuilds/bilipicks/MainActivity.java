@@ -1,4 +1,4 @@
-package com.minlibuilds.bilipicks;
+package com.beforesun.chengchengenglish;
 
 import android.app.Activity;
 import android.content.ActivityNotFoundException;

@@ -1,6 +1,6 @@
 #!/bin/bash
 # BiliPicks 电视版：构建 APK，可选通过 Wi-Fi 装到电视 / 投影仪。不需要 Android Studio 和 Gradle。
-#   ./build.sh                      只构建，产物 BiliPicks-tv.apk
+#   ./build.sh                      只构建，产物 程程学英语.apk
 #   ./build.sh install              构建并装到 $DEVICE（默认 192.168.0.106:5555），然后打开
 #   DEVICE=192.168.1.20:5555 ./build.sh install
 # 需要：JDK 17+、Android SDK 的 build-tools;34.0.0 和 platforms;android-34（见 README）、adb。
@@ -30,13 +30,13 @@ if [ ! -f "$KEYSTORE" ]; then
     -keyalg RSA -keysize 2048 -validity 36500 -dname "CN=BiliPicks TV" >/dev/null 2>&1
   echo "新建了签名钥匙：$KEYSTORE"
 fi
-"$BT/apksigner" sign --ks "$KEYSTORE" --ks-pass "pass:$KS_PASS" --ks-key-alias bilipicks --out BiliPicks-tv.apk build/aligned.apk
-rm -f BiliPicks-tv.apk.idsig
-echo "构建完成：$(pwd)/BiliPicks-tv.apk（$(du -h BiliPicks-tv.apk | cut -f1 | tr -d ' ')）"
+"$BT/apksigner" sign --ks "$KEYSTORE" --ks-pass "pass:$KS_PASS" --ks-key-alias bilipicks --out 程程学英语.apk build/aligned.apk
+rm -f 程程学英语.apk.idsig
+echo "构建完成：$(pwd)/程程学英语.apk（$(du -h 程程学英语.apk | cut -f1 | tr -d ' ')）"
 
 if [ "${1:-}" = install ]; then
   adb connect "$DEVICE" >/dev/null
-  adb -s "$DEVICE" install -r BiliPicks-tv.apk
-  adb -s "$DEVICE" shell am start -n com.minlibuilds.bilipicks/.MainActivity >/dev/null
+  adb -s "$DEVICE" install -r 程程学英语.apk
+  adb -s "$DEVICE" shell am start -n com.beforesun.chengchengenglish/.MainActivity >/dev/null
   echo "已装到 $DEVICE 并打开"
 fi

@@ -1,4 +1,4 @@
-package com.minlibuilds.bilipicks;
+package com.beforesun.chengchengenglish;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

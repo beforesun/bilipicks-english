@@ -1,4 +1,4 @@
-package com.minlibuilds.bilipicks;
+package com.beforesun.chengchengenglish;
 
 import android.app.PendingIntent;
 import android.content.Intent;

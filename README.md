@@ -9,7 +9,7 @@
 
 每周两段指定分集，每天练习约 10 分钟。看完视频后做口头任务；网页的进度只是手动记录，不会自动判断是否学会。家长请先试播视频。部分视频是转载，可能下架或变更。
 
-打开 [网页学习版](https://beforesun.github.io/bilipicks-english/) 或 [电视版](https://beforesun.github.io/bilipicks-english/tv.html)。电视 App 安装包见仓库的 `android/release/程程学英语.apk`，安装后显示名为「程程学英语」。电视版用方向键和确定键操作。
+打开 [网页学习版](https://beforesun.github.io/bilipicks-english/) 或 [电视版](https://beforesun.github.io/bilipicks-english/tv.html)。电视 App 安装包见仓库的 `android/release/程程学英语.apk`。它使用独立包名，可与原版 BiliPicks 同时安装，安装后显示名为「程程学英语」。电视版用方向键和确定键操作。
 
 课程内容在 `data.js`。维护视频可运行 `python3 update.py --check`，添加视频用 `python3 update.py add BV号 --cat 分类 --age 9 --reason "推荐理由" --stage 关卡号 --note "本关作用"`。网页进度保存在设备本地，换设备不会同步。
 

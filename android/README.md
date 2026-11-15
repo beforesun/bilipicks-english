@@ -1,3 +1,9 @@
+# 程程学英语定制版
+
+本分支的应用显示名为「程程学英语」，包名 `com.beforesun.chengchengenglish`，打开 `https://beforesun.github.io/bilipicks-english/tv.html`。它与原版 BiliPicks 可并存。构建产物为 `程程学英语.apk`；运行 `release.sh` 时会同时生成用于在线更新的 ASCII 文件名副本。签名密钥不要提交到公开仓库。
+
+---
+
 # BiliPicks 电视版应用（安卓电视 / 投影仪）
 
 一个很小的安卓应用（约 80KB）：全屏打开 BiliPicks 的电视版页面 `tv.html`，用遥控器操作。在极米 H3S（安卓 9，内核 Chrome 66）上实测过。

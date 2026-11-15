@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.minlibuilds.bilipicks" android:versionCode="5" android:versionName="1.2">
+    package="com.beforesun.chengchengenglish" android:versionCode="5" android:versionName="1.2">
   <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="28"/>
   <uses-permission android:name="android.permission.INTERNET"/>
   <!-- 应用内更新：自己下载新版、交给系统安装（系统会弹确认框） -->
