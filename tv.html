@@ -203,7 +203,7 @@ var who = function (v) { return v.orig || v.channel; };
 // 电视上方块不大，封面请 CDN 缩成小图，省内存也快
 var coverUrl = function (v) { return !v.cover ? '' : /hdslb\.com|biliimg\.com/.test(v.cover) ? v.cover.replace(/@[^/]*$/, '') + '@480w_270h_1c.webp' : v.cover; };
 function embedUrl(v) {
-  var p = v.page > 1 ? '&p=' + v.page : '';
+  var p = v.page > 1 ? '&page=' + v.page : '';
   return 'https://player.bilibili.com/player.html?bvid=' + encodeURIComponent(v.bvid || v.id) + p + '&high_quality=1&danmaku=0&autoplay=1&as_wide=1';
 }
 var toastTimer;

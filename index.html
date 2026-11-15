@@ -596,7 +596,7 @@ const who = v => v.orig || v.channel;
 const cover = v => v.cover ? `<img class="cover" src="${esc(v.cover)}" alt="" loading="lazy" referrerpolicy="no-referrer">` : '';
 const stagePill = (st, text) => `<span class="stage-pill" style="--h:${st.hue}">${esc(st.icon || '')} ${esc(text)}</span>`;
 function embedUrl(v, autoplay) {
-  const p = v.page > 1 ? `&p=${v.page}` : '';
+  const p = v.page > 1 ? `&page=${v.page}` : '';
   return `https://player.bilibili.com/player.html?bvid=${encodeURIComponent(v.bvid || v.id)}${p}&high_quality=1&danmaku=0&autoplay=${autoplay ? 1 : 0}&as_wide=1`;
 }
 let toastTimer;
