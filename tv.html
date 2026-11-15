@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#0b1220">
 <meta name="robots" content="noindex">
-<title>BiliPicks 电视版</title>
+<title>程程学英语 · 电视版</title>
 <!--
   BiliPicks 电视版：给电视、投影仪用的遥控器界面（方向键 + OK + 返回）。
   数据和网页版是同一份：data.js，看完进度也共用（同一个 localStorage）。
@@ -132,11 +132,11 @@ h1,h2,h3,p{margin:0}
 <body>
 <div class="bg"></div>
 <header class="top">
-  <div class="logo"><i>▶</i><b>BiliPicks</b><span id="sub"></span></div>
+  <div class="logo"><i>▶</i><b>程程学英语</b><span id="sub"></span></div>
   <div class="top-r"><span class="prog" id="prog"></span><span class="clock" id="clock"></span></div>
 </header>
 <main class="home" id="home"></main>
-<div class="msg" id="msg"><b>BiliPicks</b>正在加载…</div>
+<div class="msg" id="msg"><b>程程学英语</b>正在加载…</div>
 
 <section class="player quiet" id="player" hidden>
   <div class="ov top-ov">
@@ -628,7 +628,7 @@ window.addEventListener('blur', function () { if (!IN_APP) setTimeout(function (
 // 最新版的信息在同目录的 tv-app.json（由 android/release.sh 生成）。下载、校验、安装都在应用里做，进度回调 tvUpdateState()。
 var APP = window.BiliPicksApp || null;
 // 安装包和 tv.html 放在同一个目录（android/release.sh 会复制过去）
-var APK_URL = location.href.replace(/[?#].*$/, '').replace(/[^/]*$/, '') + 'BiliPicks-tv.apk';
+var APK_URL = location.href.replace(/[?#].*$/, '').replace(/[^/]*$/, '') + 'Chengcheng-English.apk';
 var upd = {busy: false, latest: null, hasNew: false};
 var panelOpen = false;
 function setDot(on) {
@@ -671,7 +671,7 @@ function panelKey(k) {
   if (k === 'back' || k === 'menu') { closePanel(); return; }
   if (k !== 'ok') return;
   if (APP) { doUpdate(); return; }
-  toast(IN_APP ? '这一版要先用 U 盘或 adb 装一次新版' : '在电视上装 BiliPicks 应用才能用', 5000);
+  toast(IN_APP ? '这一版要先用 U 盘或 adb 装一次新版' : '在电视上装程程学英语应用才能用', 5000);
 }
 function doUpdate() {
   if (!APP || upd.busy) return;
@@ -685,14 +685,14 @@ window.tvUpdateState = function (st, arg) {
   else if (st === 'verify') paintUpd('正在校验…');
   else if (st === 'install') {
     upd.busy = false;
-    paintUpd('在弹出的窗口里选「安装」', '装好后如果回到了桌面，再打开一次 BiliPicks 就是新版');
+    paintUpd('在弹出的窗口里选「安装」', '装好后如果回到了桌面，再打开一次程程学英语就是新版');
     // 有的电视（比如极米）不让应用装完自己重新打开，提前说一声
-    toast('装好后如果回到了桌面，再打开一次 BiliPicks 就是新版', 8000);
+    toast('装好后如果回到了桌面，再打开一次程程学英语就是新版', 8000);
   } else if (st === 'latest') { upd.busy = false; setDot(false); paintUpd('已经是最新版', 'v' + arg); toast('已经是最新版了'); }
   else if (st === 'permission') {
     upd.busy = false;
-    paintUpd('先允许安装，再按 OK', '请在打开的设置里允许 BiliPicks「安装未知应用」，然后回来再按一次');
-    toast('请在设置里允许 BiliPicks「安装未知应用」，然后回来再按一次', 7000);
+    paintUpd('先允许安装，再按 OK', '请在打开的设置里允许程程学英语「安装未知应用」，然后回来再按一次');
+    toast('请在设置里允许程程学英语「安装未知应用」，然后回来再按一次', 7000);
   } else if (st === 'error') { upd.busy = false; paintUpd('更新没成功 · 按 OK 重试', arg); toast(arg, 7000); }
 };
 
