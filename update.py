@@ -150,7 +150,7 @@ def refresh_videos(data, report):
         if v.pop("dead", None):
             report["revived"].append(f"{bv}《{v['title']}》")
         pic = cover_url(d.get("pic", ""))
-        if pic:
+        if pic and not v.get("coverLocked"):
             v["cover"] = pic
         page = int(v.get("page") or 1)
         pages = d.get("pages") or []
