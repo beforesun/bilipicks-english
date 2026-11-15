@@ -9,7 +9,7 @@
        usesCleartextTraffic：开发时要打开局域网里的 http 地址（MainActivity.allowed 只放行自己网站和局域网） -->
   <uses-feature android:name="android.software.leanback" android:required="false"/>
   <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
-  <application android:label="BiliPicks" android:icon="@mipmap/ic_launcher"
+  <application android:label="程程学英语" android:icon="@mipmap/ic_launcher"
       android:banner="@drawable/banner" android:hardwareAccelerated="true"
       android:allowBackup="true" android:usesCleartextTraffic="true" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
     <activity android:name=".MainActivity" android:screenOrientation="landscape" android:launchMode="singleTask"

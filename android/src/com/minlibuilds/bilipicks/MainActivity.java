@@ -35,8 +35,8 @@ import org.json.JSONObject;
  * 页面里还能用 BiliPicksApp.versionCode() / versionName() / update()：主页右下角「设置」里的应用更新，见 Updater。
  */
 public class MainActivity extends Activity {
-    static final String HOME = "https://minlibuilds.com/bili/tv.html";
-    static final String SITE_HOST = "minlibuilds.com";
+    static final String HOME = "https://beforesun.github.io/bilipicks-english/tv.html";
+    static final String SITE_HOST = "beforesun.github.io";
     // 用安卓 UA 时 B 站嵌入播放器会退回 mp4 直链，CDN 返回 403；用电脑 UA 它会走 DASH，能正常播。
     // 末尾的 BiliPicksTV/版本号（versionCode）让页面知道自己在应用里、应用能做什么（比如 ≥2 能快进）。
     static final String UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
