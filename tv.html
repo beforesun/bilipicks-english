@@ -204,7 +204,7 @@ var who = function (v) { return v.orig || v.channel; };
 var coverUrl = function (v) { return v.cover ? v.cover.replace(/@[^/]*$/, '') + '@480w_270h_1c.webp' : ''; };
 function embedUrl(v) {
   var p = v.page > 1 ? '&p=' + v.page : '';
-  return 'https://player.bilibili.com/player.html?bvid=' + encodeURIComponent(v.id) + p + '&high_quality=1&danmaku=0&autoplay=1&as_wide=1';
+  return 'https://player.bilibili.com/player.html?bvid=' + encodeURIComponent(v.bvid || v.id) + p + '&high_quality=1&danmaku=0&autoplay=1&as_wide=1';
 }
 var toastTimer;
 function toast(msg, ms) {

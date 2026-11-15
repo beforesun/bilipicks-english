@@ -131,11 +131,14 @@ def parse_stats(stats):
 
 def refresh_videos(data, report):
     vids = data["videos"]
+    cache = {}  # 同一 BV 号的多个分集只查询一次
     for i, v in enumerate(vids, 1):
-        bv = v["id"]
+        bv = v.get("bvid", v["id"])
         print(f"\r  视频 {i}/{len(vids)} {bv}", end="", flush=True)
         try:
-            code, d = view(bv)
+            if bv not in cache:
+                cache[bv] = view(bv)
+            code, d = cache[bv]
         except RuntimeError as e:
             report["warn"].append(f"{bv} {e}")
             continue
