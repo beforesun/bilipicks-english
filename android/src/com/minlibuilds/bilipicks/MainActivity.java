@@ -67,6 +67,8 @@ public class MainActivity extends Activity {
         WebSettings s = web.getSettings();
         s.setJavaScriptEnabled(true);
         s.setDomStorageEnabled(true);           // 看完进度存在 localStorage
+        s.setCacheMode(WebSettings.LOAD_NO_CACHE); // 每次打开都读取最新课程，localStorage 进度不受影响
+        web.clearCache(true);                    // 清除已缓存的旧版 tv.html 和 data.js
         s.setMediaPlaybackRequiresUserGesture(false); // 打开就播，不用先点一下
         s.setUserAgentString(UA + versionCode());
         s.setUseWideViewPort(true);             // 按页面的 <meta viewport> 排版，不自动缩小去塞超宽的内容
