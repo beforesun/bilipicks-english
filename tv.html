@@ -470,6 +470,8 @@ function secTick() {
   if (!P || P.paused || document.hidden) return;
   var v = P.list[P.idx];
   P.elapsed++;
+  // 分集播放器可能长时间停在加载画面；跨域 iframe 无法确认实际播放，须手动标记。
+  if (v.page) return;
   if (!v.duration) return;
   if (!P.marked && !isDone(v.id) && P.elapsed >= v.duration * 0.7) { P.marked = true; setDone(v.id, true); toast('✓ 记为看完了'); }
   if (isSeries(v) || P.elapsed < v.duration + 8) return;
